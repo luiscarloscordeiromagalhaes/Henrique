@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordestina</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <img class="waves-image" src="{{ url_for('static', filename='img/Waves13.png') }}" alt="Waves Image">
+        <div class="back-button">
+            <a href="/" class="Btn small">
+                <div class="sign">
+                    <img src="{{ url_for('static', filename='img/voltar.png') }}" alt="Entrar">
+                </div>
+                <div class="text">Voltar</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="logo-container">
+        <img class="logo" src="{{ url_for('static', filename='img/nIcon.ico') }}" alt="Logo da Empresa">
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <form action="/loggando" method="post">
+                <input type="text" name="Nome" placeholder="Nome">
+                <input type="password" name="Senha" placeholder="Senha">
+                <button type="submit">Entrar</button>
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul class="flash-messages">
+                        {% for message in messages %}
+                            <li class="flash-message flash-error">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

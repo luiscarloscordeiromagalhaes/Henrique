@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordestina</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/opcoes.css') }}">
+    <script>
+        function updateProgressBar(progress) {
+            const progressBar = document.getElementById("progress-bar");
+            const progressLabel = document.getElementById("progress-label");
+            progressBar.style.width = `${progress}%`;
+            progressLabel.innerText = `${progress}%`;
+        }
+        function showChartContainer() {
+            const chartContainer = document.getElementById("chart-container");
+            chartContainer.style.display = "block";
+        }
+        window.addEventListener("load", showChartContainer);
+    </script>
+</head>
+<body>
+    <div class="top-bar">
+        <img class="waves-image" src="{{ url_for('static', filename='img/Waves13.png') }}" alt="Waves Image">
+        <div class="user-greeting">Olá, {{ nome_usuario }}</div>
+        <div class="logout-button">
+            <a href="/logout" class="Btn small">
+                <div class="sign">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                    </svg>
+                </div>
+                <div class="text">Desconectar</div>
+            </a>
+        </div>
+    </div> 
+
+    <div class="sidebar">
+        <a href="/painel">  
+            <img src="{{ url_for('static', filename='img/painel.png') }}" alt="Painel">
+            <span>Painel</span>
+        </a>
+        <a href="/vendedores">  
+            <img src="{{ url_for('static', filename='img/time.png') }}" alt="Vendedores">
+            <span>Vendedores</span>
+        </a>
+        <a href="/cockpit">  
+            <img src="{{ url_for('static', filename='img/financeiro.png') }}" alt="Finanças">
+            <span>Financeiro</span>
+        </a>
+        <a href="/fazer_previsao">  
+            <img src="{{ url_for('static', filename='img/previsao.png') }}" alt="Previsão">
+            <span>Previsão</span>
+        </a>
+        {% if nivel == 1 %}
+            <a href="/opcoes">  
+                <img src="{{ url_for('static', filename='img/opcoes.png') }}" alt="Opções">
+                <span>Opções</span>
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="content">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li class="flash-message flash-success">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                <script>
+                    setTimeout(function() {
+                        var flashElement = document.querySelector('.flash-messages');
+                        if (flashElement) {
+                            flashElement.remove();
+                        }
+                    }, 3000);
+                </script>
+            {% endif %}
+        {% endwith %}
+        <div id="chart-container" style="border: 1px solid #ccc; padding: 10px; margin: 10px; display: none;">
+            <!-- Seu gráfico aqui -->
+    
+            <!-- Sua barra de progresso -->
+            <div id="progress-container">
+                <div id="progress-bar" style="width: 0;"></div>
+                <span id="progress-label">0%</span>
+            </div>
+        </div>
+        </div>
+        <div class="centered-button">
+            <a href="{{ url_for('opcoes_att') }}" class="refresh-button">Atualizar todos os dados</a>
+        </div>            
+    </div>
+</body>
+</html>

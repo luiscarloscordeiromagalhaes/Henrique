@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    overflow-y: auto;
+}
+
+.top-bar {
+    position: fixed;
+    overflow: hidden;
+    background-color: #4caf50;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.waves-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0; 
+}
+
+.user-greeting {
+    color: #fff;
+    margin-right: auto;
+    z-index: 2;  
+}
+
+.logout-button {
+    background-color: #ffffff00;
+    color: #4caf50;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    height: calc(100% - 50px);
+    width: 150px;
+    background-color: #e37900;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block; 
+    color: #fff; 
+    text-decoration: none; 
+    margin-bottom: 10px; 
+}
+
+.sidebar a img {
+    width: 30px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+.sidebar a span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -15px;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.content h2 {
+    color: #333;
+}
+
+
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    z-index: 200;
+}
+
+.flash-message {
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.flash-success {
+    background-color: #35e032;
+    color: #fff;
+}
+
+.Btn.small {
+    display: flex;
+    align-items: center; 
+    width: 50px;
+    height: 20px;
+    margin-right: 120px;
+}
+
+.Btn.small .sign {
+    width: 30%;
+}
+
+.Btn.small .text {
+    margin-left: 15px; 
+}
+
+.Btn.small svg {
+    width: 25px; 
+}
+.centered-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.refresh-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}

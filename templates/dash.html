@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dash.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <img class="waves-image" src="{{ url_for('static', filename='img/Waves13.png') }}" alt="Waves Image">
+        <div class="login-button">
+            <a href="/" class="Btn small">
+                <div class="sign">
+                    <img src="{{ url_for('static', filename='img/entrar.png') }}" alt="Entrar">
+                </div>
+                <div class="text">Voltar</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <div id="dash-container">
+            {{ dash_graph|safe }}
+        </div>
+    
+        <div id="second-dash-container">
+            {{ dash_graph2|safe }}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    overflow-y: auto;
+}
+
+.top-bar {
+    position: fixed;
+    overflow: hidden;
+    background-color: #4caf50;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 100;
+}
+
+.waves-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0; 
+}
+
+.user-greeting {
+    color: #fff;
+    margin-right: auto;
+    z-index: 2;  
+}
+
+.logout-button {
+    background-color: #ffffff00;
+    color: #4caf50;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-right: 20px;
+    z-index: 2;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    height: calc(100% - 50px);
+    width: 150px;
+    background-color: #e37900;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block; 
+    color: #fff; 
+    text-decoration: none; 
+    margin-bottom: 10px; 
+}
+
+.sidebar a img {
+    width: 30px; 
+    height: auto;
+    margin-right: 10px; 
+}
+
+.sidebar a span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -15px;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    position: relative;
+}
+
+.content h2 {
+    color: #333;
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    position: fixed;
+    top: 60px; /* Ajuste conforme necessário para garantir que as mensagens fiquem abaixo da barra superior */
+    right: 20px;
+    z-index: 200; /* Defina um valor maior do que o z-index da tabela ou de outros elementos que possam sobrepor */
+}
+
+.flash-message {
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    z-index: 200;
+}
+
+.flash-success {
+    background-color: #35e032;
+    color: #fff;
+}
+
+.flash-info {
+    background-color: #cece14;
+    color: #fff;
+}
+
+.flash-error {
+    background-color: #ff5252;
+    color: #fff;
+}
+
+.Btn.small {
+    display: flex;
+    align-items: center; 
+    width: 50px;
+    height: 20px;
+    margin-right: 80px;
+}
+
+.Btn.small .sign {
+    width: 30%;
+}
+
+.Btn.small .text {
+    margin-left: 15px; 
+}
+
+.Btn.small svg {
+    width: 25px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    max-height: 500px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    position: relative;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5); /* Ajuste o valor conforme necessário para aumentar o tamanho */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4CAF50; /* Cor verde quando marcado */
+}
+
+.ativo {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    display: inline-block;
+}
+
+.inativo {
+    width: 20px;
+    height: 20px;
+    background-color: #f44336;
+    display: inline-block;
+}
+
+tr:nth-child(odd) {
+    background-color: #e6c199; 
+}
+
+tr:nth-child(even) {
+    background-color: #f4b169;
+}
+
+td:nth-child(1), th:nth-child(1) {
+    width: 50px;
+}
+
+td:nth-child(2), th:nth-child(2) {
+    width: 50px;
+}
+
+td:nth-child(3), th:nth-child(3) {
+    width: 10px;
+}
+
+td:nth-child(4), th:nth-child(4) {
+    width: 40px;
+}
+
+.modify-btn {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    background-color: #ffc107; /* Cor amarela */
+    color: #000; /* Cor do texto */
+    padding: 10px 20px; /* Ajuste o padding conforme necessário */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    margin-bottom: 20px;
+}
+
+.modify-btn:hover {
+    background-color: #ffcd38; /* Cor amarela clara ao passar o mouse */
+}
