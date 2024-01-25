@@ -1,0 +1,1 @@
+web: gunicorn -b :PORT nordestina.py:app

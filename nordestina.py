@@ -1001,4 +1001,4 @@ def dash():
     return render_template('dash.html', dash_graph=fig.to_html(full_html=False), dash_graph2=fig2.to_html(full_html=False))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, port= 5000)
