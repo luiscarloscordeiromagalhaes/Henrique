@@ -880,12 +880,8 @@ def fazer_previsao():
     nivel = current_user.nivel
     nome = current_user.user
     dados = Dados_vendas.dados_ia()
-    print(dados.tail(5))
     dados = dados.sort_values(by=['ano', 'mes'])
     dados_agrupados = dados.groupby(['ano', 'mes']).sum().reset_index()
-    print("dados")
-    print(dados_agrupados.head(5))
-    print(dados_agrupados.tail(5))
     loaded_model = tf.keras.models.load_model("modelo_treinado.h5")
     X_test = dados_agrupados.iloc[-5:, :]
     previsoes = loaded_model.predict(X_test)
